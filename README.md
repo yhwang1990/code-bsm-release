@@ -4,17 +4,17 @@ This repository contains the source code and data of our paper "Balancing Utilit
 
 ## Datasets
 
-This repository provides all datasets used in the experiments except ``Pokec'' (available at <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If
-you need the Pokec dataset in your experiments, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
+This repository provides all datasets used in the experiments except Pokec (from <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If
+you need the Pokec dataset, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
 
-## Run the experiments
+## Instructions
 
-### Library
+### Prerequisites
 
 The following libraries should be installed properly for the experiments.
 
-1. Python 3;
-2. Gurobi Optimizer 9 (<https://www.gurobi.com/products/gurobi-optimizer/>) for BSM-Optimal only;
+1. Python 3.x;
+2. Gurobi Optimizer 9.x (<https://www.gurobi.com/products/gurobi-optimizer/>) for BSM-Optimal;
 3. NumPy 1.20+ (<https://numpy.org/>);
 4. NetworkX 2+ (<https://networkx.org/>);
 5. Matplotlib 3+ (<https://matplotlib.org/>).
@@ -29,7 +29,7 @@ Folders:
 
 - `inf_max/` contains the code for influence maximization algorithms.
 
-- `max_cover/`: contains the code for maximum coverage algorithms.
+- `max_cover/` contains the code for maximum coverage algorithms.
 
 - `result/` stores the output of experiments.
 
