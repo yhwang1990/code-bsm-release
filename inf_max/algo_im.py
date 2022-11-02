@@ -5,7 +5,6 @@ import networkx as nx
 
 from max_cover.algo_mc import SetItem, greedy_mc, saturate_mc, smsc_mc, bsm_tsgreedy_mc, bsm_saturate_mc
 
-
 num_iter = 1000
 
 

@@ -4,7 +4,8 @@ This repository contains the source code and data of our paper "Balancing Utilit
 
 ## Datasets
 
-This repository provides all datasets used in the experiments except ``Pokec'' (available at <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If you need the Pokec dataset in your experiments, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
+This repository provides all datasets used in the experiments except ``Pokec'' (available at <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If
+you need the Pokec dataset in your experiments, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
 
 ## Run the experiments
 
@@ -34,13 +35,13 @@ Folders:
 
 Scripts for the experiments:
 
- `python3 run_xx_yy.py`
+`python3 run_xx_yy.py`
 
 where `xx` for application and `yy` for dataset specification.
 
 e.g., to run the experiments for facility location on the Adult dataset with gender-based group partitioning (`attr1`):
 
- `python3 run_fl_adult_attr1.py`
+`python3 run_fl_adult_attr1.py`
 
 ## Contact
 

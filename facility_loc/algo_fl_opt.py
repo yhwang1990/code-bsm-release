@@ -1,5 +1,6 @@
-import gurobipy as gp
 import timeit
+
+import gurobipy as gp
 from gurobipy import GRB
 
 

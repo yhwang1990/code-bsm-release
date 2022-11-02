@@ -1,6 +1,8 @@
-import gurobipy as gp
 import timeit
+
+import gurobipy as gp
 from gurobipy import GRB
+
 from max_cover.algo_mc import SetItem
 
 
