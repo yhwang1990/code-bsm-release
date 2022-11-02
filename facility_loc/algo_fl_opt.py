@@ -122,7 +122,7 @@ def bsm_fl_ip(bmat: list[list[float]], k: int, tau: float, opt_g: float, attr: l
     m = len(bmat[0])
 
     try:
-        model = gp.Model("bosm_clustering")
+        model = gp.Model("bsm_clustering")
         model.setParam(GRB.Param.TimeLimit, 300)
 
         vars_x = model.addVars(n, vtype=GRB.BINARY, name="x")

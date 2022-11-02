@@ -117,7 +117,7 @@ def bsm_max_cover_ip(items: list[SetItem], k: int, tau: float, opt_g: float, att
     m = len(items)
 
     try:
-        model = gp.Model("bosm_max_cov")
+        model = gp.Model("bsm_max_cov")
         model.setParam(GRB.Param.TimeLimit, 300)
 
         vars_x = model.addVars(n, vtype=GRB.BINARY, name="x")
