@@ -434,11 +434,10 @@ def bsm_tsgreedy_mc(items: list[SetItem], k: int, tau: float, attr: list[int], g
     return sol, cov, (stop - start) + time0
 
 
-def bsm_saturate_mc(items: list[SetItem], k: int, tau: float, attr: list[int], groups: list[set]):
+def bsm_saturate_mc(items: list[SetItem], k: int, eps: float, tau: float, attr: list[int], groups: list[set]):
     c = len(groups)
     m = len(attr)
     mc = [len(groups[j]) for j in range(c)]
-    eps = 0.05
     sol_best = list()
 
     sol_f, cov_f, time0 = greedy_mc(items, k)

@@ -6,6 +6,7 @@ output_file = open('./results/mc_results_facebook-attr2.csv', 'a')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 ks = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+eps = 0.05
 tau = 0.8
 
 for k in ks:
@@ -26,7 +27,7 @@ for k in ks:
 
     total_time = 0
     for r in range(10):
-        _, cov, time = bsm_saturate_mc(items, k, tau, attrs, groups)
+        _, cov, time = bsm_saturate_mc(items, k, eps, tau, attrs, groups)
         f, g, _ = calc_obj_vals(cov, attrs, groups)
         total_time += time
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(total_time / 10) + '\n')

@@ -9,6 +9,7 @@ output_file = open('./results/mc_results_rand_c2.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 k = 5
+eps = 0.05
 
 _, cov, time = greedy_mc(items, k)
 f, g, _ = calc_obj_vals(cov, attrs, groups)
@@ -39,7 +40,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        _, cov, time = bsm_saturate_mc(items, k, tau, attrs, groups)
+        _, cov, time = bsm_saturate_mc(items, k, eps, tau, attrs, groups)
         total_time += time
     f, g, _ = calc_obj_vals(cov, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(total_time / 10) + '\n')
@@ -75,7 +76,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        _, cov, time = bsm_saturate_mc(items, k, tau, attrs, groups)
+        _, cov, time = bsm_saturate_mc(items, k, eps, tau, attrs, groups)
         total_time += time
     f, g, _ = calc_obj_vals(cov, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(total_time / 10) + '\n')

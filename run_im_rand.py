@@ -9,6 +9,7 @@ output_file = open('./results/im_results_rand_c2.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 k = 5
+eps = 0.05
 
 inst_imm = IMM(graph, False, num_nodes, k, 0.1)
 nodes, ris = inst_imm.run()
@@ -47,7 +48,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, tau, attrs, groups)
+        sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, eps, tau, attrs, groups)
         total_time += time
     dict_inf = est_inf(graph, sol)
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
@@ -88,7 +89,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, tau, attrs, groups)
+        sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, eps, tau, attrs, groups)
         total_time += time
     dict_inf = est_inf(graph, sol)
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
