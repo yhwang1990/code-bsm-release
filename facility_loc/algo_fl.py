@@ -502,13 +502,12 @@ def bsm_tsgreedy_fl(bmat: list[list[float]], k: int, tau: float, attr: list[int]
     return sol, (stop - start) - time1
 
 
-def bsm_saturate_fl(bmat: list[list[float]], k: int, tau: float, attr: list[int], groups: list[set]):
+def bsm_saturate_fl(bmat: list[list[float]], k: int, eps: float, tau: float, attr: list[int], groups: list[set]):
     start = timeit.default_timer()
     c = len(groups)
     n = len(bmat)
     m = len(attr)
     mc = [len(groups[j]) for j in range(c)]
-    eps = 0.05
     sol_best = list()
 
     sol_f, time0 = greedy_fl(bmat, k)

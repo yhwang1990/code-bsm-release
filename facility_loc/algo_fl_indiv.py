@@ -276,11 +276,10 @@ def bsm_tsgreedy_fl_indiv(bmat: list[list[float]], k: int, tau: float):
     return sol, (stop - start) - time1
 
 
-def bsm_saturate_fl_indiv(bmat: list[list[float]], k: int, tau: float):
+def bsm_saturate_fl_indiv(bmat: list[list[float]], k: int, eps: float, tau: float):
     start = timeit.default_timer()
     n = len(bmat)
     m = len(bmat[0])
-    eps = 0.05
     sol_best = list()
 
     sol_f, time0 = greedy_fl_indiv(bmat, k)

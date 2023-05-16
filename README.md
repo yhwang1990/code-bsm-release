@@ -4,8 +4,7 @@ This repository contains the source code and data of our paper "Balancing Utilit
 
 ## Datasets
 
-This repository provides all datasets used in the experiments except Pokec (from <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If
-you need the Pokec dataset, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
+This repository provides all datasets used in the experiments except Pokec (from <https://snap.stanford.edu/data/soc-pokec.html>, which is too large to be uploaded). If you need the processed Pokec dataset, feel free to contact [Yanhao Wang](mailto:yhwang@dase.ecnu.edu.cn).
 
 ## Instructions
 
