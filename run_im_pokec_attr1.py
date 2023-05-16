@@ -7,6 +7,7 @@ output_file = open('./results/im_results_pokec-attr1.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 ks = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+eps= 0.05
 tau = 0.8
 
 for k in ks:
@@ -33,7 +34,7 @@ for k in ks:
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
     output_file.write('BSM-TSGreedy,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(time) + '\n')
 
-    sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, tau, attrs, groups)
+    sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, eps, tau, attrs, groups)
     dict_inf = est_inf(graph, sol)
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(time) + '\n')

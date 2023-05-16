@@ -3,9 +3,9 @@ import numpy
 from max_cover.algo_mc import greedy_mc, saturate_mc, smsc_mc, bsm_tsgreedy_mc, bsm_saturate_mc, read_items, read_attr, calc_obj_vals
 
 # Experiments on random graphs
-items = read_items('./data/rand_graph/mc_rand_c2_edges.txt', is_directed=False)
-attrs, groups = read_attr('./data/rand_graph/mc_rand_c2_attr.txt')
-output_file = open('./results/mc_results_rand_c2.csv', 'w')
+items = read_items('./data/facebook/facebook-edges.txt', is_directed=False)
+attrs, groups = read_attr('./data/facebook/facebook-attr1.txt')
+output_file = open('./results/mc_results_facebook_attr1_tau.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 k = 5
@@ -50,9 +50,9 @@ attrs.clear()
 groups.clear()
 output_file.close()
 
-items = read_items('./data/rand_graph/mc_rand_c4_edges.txt', is_directed=False)
-attrs, groups = read_attr('./data/rand_graph/mc_rand_c4_attr.txt')
-output_file = open('./results/mc_results_rand_c4.csv', 'w')
+items = read_items('./data/facebook/facebook-edges.txt', is_directed=False)
+attrs, groups = read_attr('./data/facebook/facebook-attr2.txt')
+output_file = open('./results/mc_results_facebook_attr2_tau.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 _, cov, time = greedy_mc(items, k)

@@ -7,6 +7,7 @@ output_file = open('./results/im_results_facebook-attr1.csv', 'a')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 ks = [1, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50]
+eps = 0.05
 tau = 0.8
 
 for k in ks:
@@ -33,7 +34,7 @@ for k in ks:
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
     output_file.write('BSM-TSGreedy,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(time) + '\n')
 
-    sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, tau, attrs, groups)
+    sol, time = bsm_saturate_im(ris, nodes, k, num_nodes, eps, tau, attrs, groups)
     dict_inf = est_inf(graph, sol)
     f, g, _ = calc_obj_vals(dict_inf, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(time) + '\n')

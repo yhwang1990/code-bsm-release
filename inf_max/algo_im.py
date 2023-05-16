@@ -5,7 +5,8 @@ import networkx as nx
 
 from max_cover.algo_mc import SetItem, greedy_mc, saturate_mc, smsc_mc, bsm_tsgreedy_mc, bsm_saturate_mc
 
-num_iter = 1000
+
+num_iter = 10000
 
 
 def read_file(graph_path: str, is_dir: bool):
@@ -16,7 +17,7 @@ def read_file(graph_path: str, is_dir: bool):
     n = int(header[0])
     m = int(header[1])
     G.add_nodes_from(range(n))
-    if n < 1000:
+    if graph_path.startswith('./data/rand') or graph_path.startswith('./data/dblp'):
         inf_pr = 0.1
     else:
         inf_pr = 0.01
@@ -152,10 +153,10 @@ def bsm_tsgreedy_im(ris: list[set], nodes: list[int], k: int, n: int, tau: float
     return sol, (end - start) + time2
 
 
-def bsm_saturate_im(ris: list[set], nodes: list[int], k: int, n: int, tau: float, user_attrs: list[int], user_groups: list[set]):
+def bsm_saturate_im(ris: list[set], nodes: list[int], k: int, n: int, eps: float, tau: float, user_attrs: list[int], user_groups: list[set]):
     start = timeit.default_timer()
     items = generate_items(n, ris)
     attrs, groups = generate_attr(nodes, user_attrs, user_groups)
     end = timeit.default_timer()
-    sol, _, time2 = bsm_saturate_mc(items, k, tau, attrs, groups)
+    sol, _, time2 = bsm_saturate_mc(items, k, eps, tau, attrs, groups)
     return sol, (end - start) + time2

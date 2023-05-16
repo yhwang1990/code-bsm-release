@@ -10,6 +10,7 @@ output_file = open('./results/fl_results_rand_c2.csv', 'w')
 output_file.write('algorithm,k,tau,f,g,time(s)\n')
 
 k = 5
+eps = 0.05
 
 bmat = generate_benefit_mat(items, users)
 
@@ -42,7 +43,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        sol, time = bsm_saturate_fl(bmat, k, tau, attrs, groups)
+        sol, time = bsm_saturate_fl(bmat, k, eps, tau, attrs, groups)
         total_time += time
     f, g, _ = calc_obj_vals(bmat, sol, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(total_time / 10) + '\n')
@@ -78,7 +79,7 @@ for tau in taus:
 for tau in taus:
     total_time = 0
     for r in range(10):
-        sol, time = bsm_saturate_fl(bmat, k, tau, attrs, groups)
+        sol, time = bsm_saturate_fl(bmat, k, eps, tau, attrs, groups)
         total_time += time
     f, g, _ = calc_obj_vals(bmat, sol, attrs, groups)
     output_file.write('BSM-Saturate,' + str(k) + ',' + str(tau) + ',' + str(f) + ',' + str(g) + ',' + str(total_time / 10) + '\n')
