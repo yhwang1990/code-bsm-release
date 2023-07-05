@@ -1,6 +1,6 @@
 # Code and Data for "Balancing Utility and Fairness in Submodular Maximization"
 
-This repository contains the source code and data of our paper "Balancing Utility and Fairness in Submodular Maximization". All algorithms are implemented in Python 3.
+This repository contains the source code and data of our paper "Balancing Utility and Fairness in Submodular Maximization" (<https://arxiv.org/abs/2211.00980>). All algorithms are implemented in Python 3.
 
 ## Datasets
 
